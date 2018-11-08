@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace MediaOrganiser.Logic
 {
-    class Media
+    public class Media
     {
+        public string FileName { get; set; }
+        public string FileLocation { get; set; }
+        public string FileType { get; set; }
+        public string Category { get; set; }
+
+        public void SaveMediaData()
+        {
+        }
     }
 }

@@ -72,6 +72,7 @@
             this.txtBoxDirPath.UseSelectable = true;
             this.txtBoxDirPath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBoxDirPath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxDirPath.Click += new System.EventHandler(this.txtBoxDirPath_Click);
             // 
             // metroLabel2
             // 

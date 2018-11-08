@@ -51,5 +51,11 @@ namespace MediaOrganiser
             lstMediaViewer.Clear();
             lstMediaViewer.Items.AddRange(Viewer.DisplayDirectory(userDirectory.GetPath()));
         }
+
+        private void btnUploadFile_Click(object sender, EventArgs e)
+        {
+            FileDetails form = new FileDetails();
+            form.Show();
+        }
     }
 }

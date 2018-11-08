@@ -14,6 +14,7 @@ namespace MediaOrganiser
 {
     public partial class SettingsForm : MetroForm
     {
+        UserDirectory userDirectory;
         public SettingsForm()
         {
             InitializeComponent();
@@ -21,6 +22,11 @@ namespace MediaOrganiser
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            userDirectory = new UserDirectory();
+            if (!(string.IsNullOrEmpty(userDirectory.GetPath())))
+            {
+                txtBoxDirPath.Text = userDirectory.GetPath();
+            }
 
         }
 
@@ -28,10 +34,14 @@ namespace MediaOrganiser
         {
             if (!(string.IsNullOrEmpty(txtBoxDirPath.Text)))
             {               
-                UserDirectory userDirectory = new UserDirectory(txtBoxDirPath.Text);
+                userDirectory = new UserDirectory(txtBoxDirPath.Text);
                 userDirectory.SetPath();
                 MessageBox.Show(userDirectory.CreateDirectory());
             }
+        }
+
+        private void txtBoxDirPath_Click(object sender, EventArgs e)
+        {
         }
     }
 }

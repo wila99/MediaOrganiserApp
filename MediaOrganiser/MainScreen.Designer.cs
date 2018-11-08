@@ -46,6 +46,7 @@
             this.btnUploadFile.TabIndex = 0;
             this.btnUploadFile.Text = "Upload File";
             this.btnUploadFile.UseSelectable = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
             // btnCreateFolder
             // 
