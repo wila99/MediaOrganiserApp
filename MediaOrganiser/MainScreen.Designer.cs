@@ -122,7 +122,6 @@
             this.lstMediaViewer.Size = new System.Drawing.Size(542, 328);
             this.lstMediaViewer.TabIndex = 7;
             this.lstMediaViewer.UseCompatibleStateImageBehavior = false;
-            this.lstMediaViewer.SelectedIndexChanged += new System.EventHandler(this.lstMediaViewer_SelectedIndexChanged);
             // 
             // btnRefreshDirectory
             // 

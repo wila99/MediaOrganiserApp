@@ -15,7 +15,7 @@ namespace MediaOrganiser.Logic
 
         public UserDirectory(string directoryPath)
         {
-            DirectoryPath = directoryPath;
+            this.DirectoryPath = directoryPath;
         }
         //Blank constructor to allow retrieval of directory path.
         public UserDirectory() {       }

@@ -16,42 +16,34 @@ namespace MediaOrganiser
     public partial class MainScreen : MetroForm
     {
         UserDirectory userDirectory = new UserDirectory();
+        string currentPath;
         public MainScreen()
         {
             InitializeComponent();
         }
-
         private void MainScreen_Load(object sender, EventArgs e)
         {
+            Category category = new Category();
+            category.AddCategory("test");
+            category.AddCategory("test2");
+            MessageBox.Show("Done");
+            category.EditCategory("test3", "test2");
+            //category.GetCategories();
         }
-
-        private void lblTest_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnSettings_Click(object sender, EventArgs e)
         {
             SettingsForm form = new SettingsForm();
             form.Show();
         }
-
-        private void lstMediaViewer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRefreshDirectory_Click(object sender, EventArgs e)
         {
-            lstMediaViewer.Clear();
-            lstMediaViewer.Items.AddRange(Viewer.DisplayDirectory(userDirectory.GetPath()));
-        }
+            if (string.IsNullOrEmpty(currentPath))
+            {
 
+            }
+            lstMediaViewer.Clear();
+            lstMediaViewer.Items.AddRange(Viewer.DisplayDirectory(currentPath));
+        }
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
             FileDetails form = new FileDetails();

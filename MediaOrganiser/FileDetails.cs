@@ -27,6 +27,12 @@ namespace MediaOrganiser
                 "|Video Files|*.mp4; *.mpg; *.mpeg; *.avi; *.flv; *.wmv; *.mov" +
                 "|Image Files|*.ai; *.bmp; *.gif; *.ico; *.jpg; *.jpeg; *.png; *.ps; *.psd; *.svg; *.tif" +
                 "|Miscellaneous Files|*.7z; *.rar; *.zip; *.xlsx; *.doc; *.docx; *.pdf; *.txt; *.ppt; *.pptx";
+            Category category = new Category();
+            foreach (var item in category.GetCategories())
+            {
+                cboxCategory.Items.Add(item);
+            }
+            
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -39,7 +45,13 @@ namespace MediaOrganiser
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
             FileUploader uploader = new FileUploader();
-            uploader.
+            //uploader.
         }
-    }
+
+        private void cboxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }      
+    
 }

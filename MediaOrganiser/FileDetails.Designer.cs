@@ -75,6 +75,7 @@
             this.cboxCategory.Size = new System.Drawing.Size(275, 29);
             this.cboxCategory.TabIndex = 3;
             this.cboxCategory.UseSelectable = true;
+            this.cboxCategory.SelectedIndexChanged += new System.EventHandler(this.cboxCategory_SelectedIndexChanged);
             // 
             // txtBoxFIleName
             // 
