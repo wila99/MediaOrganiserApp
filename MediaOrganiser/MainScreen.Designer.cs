@@ -50,7 +50,7 @@
             // 
             // btnCreateFolder
             // 
-            this.btnCreateFolder.Location = new System.Drawing.Point(126, 87);
+            this.btnCreateFolder.Location = new System.Drawing.Point(119, 87);
             this.btnCreateFolder.Name = "btnCreateFolder";
             this.btnCreateFolder.Size = new System.Drawing.Size(81, 39);
             this.btnCreateFolder.TabIndex = 1;
@@ -122,10 +122,11 @@
             this.lstMediaViewer.Size = new System.Drawing.Size(542, 328);
             this.lstMediaViewer.TabIndex = 7;
             this.lstMediaViewer.UseCompatibleStateImageBehavior = false;
+            this.lstMediaViewer.Click += new System.EventHandler(this.lstMediaViewer_Click);
             // 
             // btnRefreshDirectory
             // 
-            this.btnRefreshDirectory.Location = new System.Drawing.Point(229, 87);
+            this.btnRefreshDirectory.Location = new System.Drawing.Point(216, 87);
             this.btnRefreshDirectory.Name = "btnRefreshDirectory";
             this.btnRefreshDirectory.Size = new System.Drawing.Size(81, 39);
             this.btnRefreshDirectory.TabIndex = 8;

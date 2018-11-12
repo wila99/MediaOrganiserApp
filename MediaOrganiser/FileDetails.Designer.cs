@@ -32,7 +32,7 @@
             this.lblFileDescription = new MetroFramework.Controls.MetroLabel();
             this.lblCategory = new MetroFramework.Controls.MetroLabel();
             this.cboxCategory = new MetroFramework.Controls.MetroComboBox();
-            this.txtBoxFIleName = new MetroFramework.Controls.MetroTextBox();
+            this.txtBoxFileName = new MetroFramework.Controls.MetroTextBox();
             this.txtBoxFileDesc = new MetroFramework.Controls.MetroTextBox();
             this.btnUploadFile = new MetroFramework.Controls.MetroButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -77,35 +77,35 @@
             this.cboxCategory.UseSelectable = true;
             this.cboxCategory.SelectedIndexChanged += new System.EventHandler(this.cboxCategory_SelectedIndexChanged);
             // 
-            // txtBoxFIleName
+            // txtBoxFileName
             // 
             // 
             // 
             // 
-            this.txtBoxFIleName.CustomButton.Image = null;
-            this.txtBoxFIleName.CustomButton.Location = new System.Drawing.Point(247, 2);
-            this.txtBoxFIleName.CustomButton.Name = "";
-            this.txtBoxFIleName.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtBoxFIleName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBoxFIleName.CustomButton.TabIndex = 1;
-            this.txtBoxFIleName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtBoxFIleName.CustomButton.UseSelectable = true;
-            this.txtBoxFIleName.CustomButton.Visible = false;
-            this.txtBoxFIleName.Lines = new string[0];
-            this.txtBoxFIleName.Location = new System.Drawing.Point(127, 81);
-            this.txtBoxFIleName.MaxLength = 32767;
-            this.txtBoxFIleName.Name = "txtBoxFIleName";
-            this.txtBoxFIleName.PasswordChar = '\0';
-            this.txtBoxFIleName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBoxFIleName.SelectedText = "";
-            this.txtBoxFIleName.SelectionLength = 0;
-            this.txtBoxFIleName.SelectionStart = 0;
-            this.txtBoxFIleName.ShortcutsEnabled = true;
-            this.txtBoxFIleName.Size = new System.Drawing.Size(275, 30);
-            this.txtBoxFIleName.TabIndex = 4;
-            this.txtBoxFIleName.UseSelectable = true;
-            this.txtBoxFIleName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtBoxFIleName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxFileName.CustomButton.Image = null;
+            this.txtBoxFileName.CustomButton.Location = new System.Drawing.Point(247, 2);
+            this.txtBoxFileName.CustomButton.Name = "";
+            this.txtBoxFileName.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtBoxFileName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtBoxFileName.CustomButton.TabIndex = 1;
+            this.txtBoxFileName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBoxFileName.CustomButton.UseSelectable = true;
+            this.txtBoxFileName.CustomButton.Visible = false;
+            this.txtBoxFileName.Lines = new string[0];
+            this.txtBoxFileName.Location = new System.Drawing.Point(127, 83);
+            this.txtBoxFileName.MaxLength = 32767;
+            this.txtBoxFileName.Name = "txtBoxFileName";
+            this.txtBoxFileName.PasswordChar = '\0';
+            this.txtBoxFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBoxFileName.SelectedText = "";
+            this.txtBoxFileName.SelectionLength = 0;
+            this.txtBoxFileName.SelectionStart = 0;
+            this.txtBoxFileName.ShortcutsEnabled = true;
+            this.txtBoxFileName.Size = new System.Drawing.Size(275, 30);
+            this.txtBoxFileName.TabIndex = 4;
+            this.txtBoxFileName.UseSelectable = true;
+            this.txtBoxFileName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBoxFileName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtBoxFileDesc
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.btnSaveDetails);
             this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.txtBoxFileDesc);
-            this.Controls.Add(this.txtBoxFIleName);
+            this.Controls.Add(this.txtBoxFileName);
             this.Controls.Add(this.cboxCategory);
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.lblFileDescription);
@@ -185,7 +185,7 @@
         private MetroFramework.Controls.MetroLabel lblFileDescription;
         private MetroFramework.Controls.MetroLabel lblCategory;
         private MetroFramework.Controls.MetroComboBox cboxCategory;
-        private MetroFramework.Controls.MetroTextBox txtBoxFIleName;
+        private MetroFramework.Controls.MetroTextBox txtBoxFileName;
         private MetroFramework.Controls.MetroTextBox txtBoxFileDesc;
         private MetroFramework.Controls.MetroButton btnUploadFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog;

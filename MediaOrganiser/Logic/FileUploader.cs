@@ -8,10 +8,10 @@ using System.IO;
 namespace MediaOrganiser.Logic
 {
     public class FileUploader : Media
-    {      
-        public static void CopyFile(string filePath)
+    {
+        public void CopyFile(string sourcePath, string targetPath)
         {
-            //File.Copy();
+            File.Copy(sourcePath,targetPath);
         }
     }
 }

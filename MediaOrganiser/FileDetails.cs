@@ -15,7 +15,7 @@ namespace MediaOrganiser
 {
     public partial class FileDetails : MetroForm
     {
-        
+        UserDirectory userDirectory = new UserDirectory();
         public FileDetails()
         {
             InitializeComponent();
@@ -39,13 +39,24 @@ namespace MediaOrganiser
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+               
             }
         }
 
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
-            FileUploader uploader = new FileUploader();
+  
+            MessageBox.Show(userDirectory.GetCurrentPath());
             //uploader.
+            FileUploader fileUploader = new FileUploader
+            {
+                FileName = txtBoxFileName.Text,
+                FilePath = Path.Combine(userDirectory.GetCurrentPath(), txtBoxFileName.Text + Path.GetExtension(openFileDialog.FileName)),
+                Category = cboxCategory.Text,
+                FileType = Path.GetExtension(openFileDialog.FileName)
+            };
+            fileUploader.CopyFile(openFileDialog.FileName, fileUploader.FilePath);
+            fileUploader.SaveMediaData();
         }
 
         private void cboxCategory_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,7 +38,9 @@ namespace MediaOrganiser
             if (!(string.IsNullOrEmpty(txtBoxDirPath.Text)))
             {               
                 userDirectory = new UserDirectory(txtBoxDirPath.Text);
+                userDirectory.currentPath = txtBoxDirPath.Text;
                 userDirectory.SetPath();
+                userDirectory.SetCurrentPath();
                 MessageBox.Show(userDirectory.CreateDirectory());
             }
         }
