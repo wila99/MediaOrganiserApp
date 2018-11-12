@@ -36,11 +36,13 @@
             this.btnSearch = new MetroFramework.Controls.MetroButton();
             this.lstMediaViewer = new System.Windows.Forms.ListView();
             this.btnRefreshDirectory = new MetroFramework.Controls.MetroButton();
+            this.btnDeleteFile = new MetroFramework.Controls.MetroButton();
+            this.btnEditFile = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(23, 87);
+            this.btnUploadFile.Location = new System.Drawing.Point(586, 101);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(81, 39);
             this.btnUploadFile.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // btnCreateFolder
             // 
-            this.btnCreateFolder.Location = new System.Drawing.Point(119, 87);
+            this.btnCreateFolder.Location = new System.Drawing.Point(586, 266);
             this.btnCreateFolder.Name = "btnCreateFolder";
             this.btnCreateFolder.Size = new System.Drawing.Size(81, 39);
             this.btnCreateFolder.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(23, 519);
+            this.btnSettings.Location = new System.Drawing.Point(23, 435);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(81, 39);
             this.btnSettings.TabIndex = 3;
@@ -70,7 +72,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(23, 148);
+            this.lblSearch.Location = new System.Drawing.Point(23, 64);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(48, 19);
             this.lblSearch.TabIndex = 4;
@@ -91,7 +93,7 @@
             this.txtBoxSearch.CustomButton.UseSelectable = true;
             this.txtBoxSearch.CustomButton.Visible = false;
             this.txtBoxSearch.Lines = new string[0];
-            this.txtBoxSearch.Location = new System.Drawing.Point(77, 144);
+            this.txtBoxSearch.Location = new System.Drawing.Point(77, 60);
             this.txtBoxSearch.MaxLength = 32767;
             this.txtBoxSearch.Name = "txtBoxSearch";
             this.txtBoxSearch.PasswordChar = '\0';
@@ -108,16 +110,17 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(255, 144);
+            this.btnSearch.Location = new System.Drawing.Point(255, 60);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseSelectable = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lstMediaViewer
             // 
-            this.lstMediaViewer.Location = new System.Drawing.Point(23, 185);
+            this.lstMediaViewer.Location = new System.Drawing.Point(23, 101);
             this.lstMediaViewer.Name = "lstMediaViewer";
             this.lstMediaViewer.Size = new System.Drawing.Size(542, 328);
             this.lstMediaViewer.TabIndex = 7;
@@ -126,7 +129,7 @@
             // 
             // btnRefreshDirectory
             // 
-            this.btnRefreshDirectory.Location = new System.Drawing.Point(216, 87);
+            this.btnRefreshDirectory.Location = new System.Drawing.Point(586, 320);
             this.btnRefreshDirectory.Name = "btnRefreshDirectory";
             this.btnRefreshDirectory.Size = new System.Drawing.Size(81, 39);
             this.btnRefreshDirectory.TabIndex = 8;
@@ -134,11 +137,33 @@
             this.btnRefreshDirectory.UseSelectable = true;
             this.btnRefreshDirectory.Click += new System.EventHandler(this.btnRefreshDirectory_Click);
             // 
+            // btnDeleteFile
+            // 
+            this.btnDeleteFile.Location = new System.Drawing.Point(586, 211);
+            this.btnDeleteFile.Name = "btnDeleteFile";
+            this.btnDeleteFile.Size = new System.Drawing.Size(81, 39);
+            this.btnDeleteFile.TabIndex = 9;
+            this.btnDeleteFile.Text = "Delete File";
+            this.btnDeleteFile.UseSelectable = true;
+            this.btnDeleteFile.Click += new System.EventHandler(this.btnDeleteFile_Click);
+            // 
+            // btnEditFile
+            // 
+            this.btnEditFile.Location = new System.Drawing.Point(586, 155);
+            this.btnEditFile.Name = "btnEditFile";
+            this.btnEditFile.Size = new System.Drawing.Size(81, 39);
+            this.btnEditFile.TabIndex = 10;
+            this.btnEditFile.Text = "Edit File";
+            this.btnEditFile.UseSelectable = true;
+            this.btnEditFile.Click += new System.EventHandler(this.btnEditFile_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 581);
+            this.ClientSize = new System.Drawing.Size(685, 488);
+            this.Controls.Add(this.btnEditFile);
+            this.Controls.Add(this.btnDeleteFile);
             this.Controls.Add(this.btnRefreshDirectory);
             this.Controls.Add(this.lstMediaViewer);
             this.Controls.Add(this.btnSearch);
@@ -166,6 +191,8 @@
         private MetroFramework.Controls.MetroButton btnSearch;
         private System.Windows.Forms.ListView lstMediaViewer;
         private MetroFramework.Controls.MetroButton btnRefreshDirectory;
+        private MetroFramework.Controls.MetroButton btnDeleteFile;
+        private MetroFramework.Controls.MetroButton btnEditFile;
     }
 }
 

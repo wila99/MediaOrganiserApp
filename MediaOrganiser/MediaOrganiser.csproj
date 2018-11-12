@@ -61,7 +61,7 @@
       <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Category.cs" />
-    <Compile Include="Logic\FileUploader.cs" />
+    <Compile Include="Logic\FileController.cs" />
     <Compile Include="Logic\UserDirectory.cs" />
     <Compile Include="Logic\Media.cs" />
     <Compile Include="Logic\Viewer.cs" />

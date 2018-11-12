@@ -111,6 +111,7 @@
             this.dataGridViewCategory.Location = new System.Drawing.Point(20, 256);
             this.dataGridViewCategory.Name = "dataGridViewCategory";
             this.dataGridViewCategory.ReadOnly = true;
+            this.dataGridViewCategory.RowHeadersVisible = false;
             this.dataGridViewCategory.Size = new System.Drawing.Size(384, 201);
             this.dataGridViewCategory.TabIndex = 4;
             this.dataGridViewCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCategory_CellContentClick);

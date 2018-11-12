@@ -16,6 +16,17 @@ namespace MediaOrganiser
     public partial class FileDetails : MetroForm
     {
         UserDirectory userDirectory = new UserDirectory();
+        string mode;
+        public FileDetails(string fileName, string filePath, string fileCategory, string fileDesc)
+        {
+            mode = "edit";
+            txtBoxFileName.Text = fileName;
+            txtBoxFileDesc.Text = fileDesc;
+            cboxCategory.Text = fileCategory;
+            openFileDialog.FileName = filePath;
+
+            InitializeComponent();
+        }
         public FileDetails()
         {
             InitializeComponent();
@@ -32,6 +43,7 @@ namespace MediaOrganiser
             {
                 cboxCategory.Items.Add(item);
             }
+
             
         }
 
@@ -39,24 +51,36 @@ namespace MediaOrganiser
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-               
+                
             }
         }
 
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
-  
-            MessageBox.Show(userDirectory.GetCurrentPath());
-            //uploader.
-            FileUploader fileUploader = new FileUploader
+              if (String.IsNullOrEmpty(openFileDialog.FileName))
             {
-                FileName = txtBoxFileName.Text,
-                FilePath = Path.Combine(userDirectory.GetCurrentPath(), txtBoxFileName.Text + Path.GetExtension(openFileDialog.FileName)),
-                Category = cboxCategory.Text,
-                FileType = Path.GetExtension(openFileDialog.FileName)
-            };
-            fileUploader.CopyFile(openFileDialog.FileName, fileUploader.FilePath);
-            fileUploader.SaveMediaData();
+                MessageBox.Show("Error, unable to save details.");
+            }
+            else
+            {
+                FileController fileUploader = new FileController
+                {
+                    FileName = txtBoxFileName.Text,
+                    FilePath = Path.Combine(userDirectory.GetCurrentPath(), txtBoxFileName.Text + Path.GetExtension(openFileDialog.FileName)),
+                    Category = cboxCategory.Text,
+                    FileType = Path.GetExtension(openFileDialog.FileName)
+                };
+                if (mode == "edit")
+                {
+
+                }
+                else
+                {
+                    fileUploader.CopyFile(openFileDialog.FileName, fileUploader.FilePath);
+                    fileUploader.SaveMediaData();
+                }   
+            }
+         
         }
 
         private void cboxCategory_SelectedIndexChanged(object sender, EventArgs e)

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
+using System.Xml;
 
 namespace MediaOrganiser.Logic
 {
@@ -20,16 +22,34 @@ namespace MediaOrganiser.Logic
             root = XElement.Load(@"Data\Data.xml");
             XElement rootElement = new XElement("FileStore");
            
-            XElement filePathElement = new XElement("FilePath", new XAttribute("name", FilePath));
-            XElement fileNameElement = new XElement("FileName", new XAttribute("name", FileName));
-            XElement fileTypeElement = new XElement("FileType", new XAttribute("name", FileType));
-            XElement catElement = new XElement("Category", new XAttribute("name", Category));
+            XElement fileParentPathElement = new XElement("FilePath" +FileName);
+            XElement filePathElement = new XElement("FilePath", FilePath);
+            XElement fileNameElement = new XElement("FileName", FileName);
+            XElement fileTypeElement = new XElement("FileType", FileType);
+            XElement catElement = new XElement("Category", Category);
 
-            filePathElement.Add(fileNameElement, fileTypeElement, catElement);
+            fileParentPathElement.Add(filePathElement, fileNameElement, fileTypeElement, catElement);
 
-            root.Add(rootElement,filePathElement);
+            root.Add(rootElement, fileParentPathElement);
             
             root.Save(@"Data\Data.XML");
+        }
+        public void DeleteData(string file)
+        {
+            root = XElement.Load(@"Data\Data.xml");
+            root.Descendants("FilePath"+file).Descendants().Remove();
+            root.Save("Data/Data.xml");
+        }
+        public List<string> GetData()
+        {
+            List<string> list = new List<string>();
+
+            root = XElement.Load(@"Data\Data.xml");
+            foreach (XElement xe in root.Descendants("category"))
+            {
+                list.Add(xe.Value);
+            }
+            return list;
         }
     }
 }
