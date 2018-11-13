@@ -60,6 +60,12 @@
     <Compile Include="FileDetails.Designer.cs">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FolderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FolderDetails.Designer.cs">
+      <DependentUpon>FolderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Category.cs" />
     <Compile Include="Logic\FileController.cs" />
     <Compile Include="Logic\UserDirectory.cs" />
@@ -81,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderDetails.resx">
+      <DependentUpon>FolderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>

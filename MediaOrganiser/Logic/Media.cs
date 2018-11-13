@@ -16,40 +16,53 @@ namespace MediaOrganiser.Logic
         public string FilePath { get; set; }
         public string FileType { get; set; }
         public string Category { get; set; }
+        public string FileDescription { get; set; }
 
         public void SaveMediaData()
         {
+            // This part is creation of RootNode, however you want
             root = XElement.Load(@"Data\Data.xml");
             XElement rootElement = new XElement("FileStore");
-           
-            XElement fileParentPathElement = new XElement("FilePath" +FileName);
+
+            XElement fileParentPathElement = new XElement("FilePath" + FileName);
             XElement filePathElement = new XElement("FilePath", FilePath);
             XElement fileNameElement = new XElement("FileName", FileName);
             XElement fileTypeElement = new XElement("FileType", FileType);
+            XElement fileDescriptionElement = new XElement("FileDescription", FileDescription);
+
             XElement catElement = new XElement("Category", Category);
 
-            fileParentPathElement.Add(filePathElement, fileNameElement, fileTypeElement, catElement);
+            fileParentPathElement.Add(filePathElement, fileNameElement, fileTypeElement, fileDescriptionElement, catElement);
 
             root.Add(rootElement, fileParentPathElement);
-            
+
             root.Save(@"Data\Data.XML");
         }
         public void DeleteData(string file)
         {
             root = XElement.Load(@"Data\Data.xml");
-            root.Descendants("FilePath"+file).Descendants().Remove();
+            root.Descendants("FilePath" + file).Descendants().Remove();
             root.Save("Data/Data.xml");
         }
-        public List<string> GetData()
+        public List<string> GetData(string filePath)
         {
             List<string> list = new List<string>();
-
             root = XElement.Load(@"Data\Data.xml");
-            foreach (XElement xe in root.Descendants("category"))
-            {
-                list.Add(xe.Value);
-            }
+            
             return list;
         }
     }
 }
+
+//var query = from xml in root.Descendants("FilePath" + FileName)
+//            where (string)xml.Element("FilePath")
+//                                         == filePath
+//            select new
+//            {
+//                filePath = (string)xml.Element("FilePath"),
+//                fileName = (string)xml.Element("FileName"),
+//                fileType = (string)xml.Element("FileType"),
+//                category = (string)xml.Element("Category")
+//            };
+//            foreach (var item in query)
+//                list.Add(item.ToString());

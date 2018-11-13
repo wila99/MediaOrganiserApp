@@ -58,6 +58,7 @@
             this.btnCreateFolder.TabIndex = 1;
             this.btnCreateFolder.Text = "Create Folder";
             this.btnCreateFolder.UseSelectable = true;
+            this.btnCreateFolder.Click += new System.EventHandler(this.btnCreateFolder_Click);
             // 
             // btnSettings
             // 

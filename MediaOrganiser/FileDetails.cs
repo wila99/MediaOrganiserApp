@@ -68,7 +68,8 @@ namespace MediaOrganiser
                     FileName = txtBoxFileName.Text,
                     FilePath = Path.Combine(userDirectory.GetCurrentPath(), txtBoxFileName.Text + Path.GetExtension(openFileDialog.FileName)),
                     Category = cboxCategory.Text,
-                    FileType = Path.GetExtension(openFileDialog.FileName)
+                    FileType = Path.GetExtension(openFileDialog.FileName),
+                    FileDescription = txtBoxFileDesc.Text        
                 };
                 if (mode == "edit")
                 {

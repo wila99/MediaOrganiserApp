@@ -52,7 +52,7 @@ namespace MediaOrganiser
                 FileController controller = new FileController();
                 if (mode == "edit")
                 {
-                    System.Collections.Generic.List<string> list = controller.GetData();
+                    System.Collections.Generic.List<string> list = controller.GetData(Path.Combine(userDirectory.currentPath, lstMediaViewer.SelectedItems[0].Text));
                     FileDetails form = new FileDetails(lstMediaViewer.SelectedItems[0].Text, Path.Combine(userDirectory.currentPath,lstMediaViewer.SelectedItems[0].Text),list[3],list[2]);
                     form.Show();
                 }
@@ -105,6 +105,12 @@ namespace MediaOrganiser
                     lstMediaViewer.Items.Add(item);
                 }
             }
+        }
+
+        private void btnCreateFolder_Click(object sender, EventArgs e)
+        {
+            FolderDetails folderForm = new FolderDetails(userDirectory.currentPath);
+            folderForm.Show();
         }
     }
 }
