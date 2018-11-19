@@ -73,6 +73,7 @@
             this.cboxCategory.Location = new System.Drawing.Point(127, 137);
             this.cboxCategory.Name = "cboxCategory";
             this.cboxCategory.Size = new System.Drawing.Size(275, 29);
+            this.cboxCategory.Style = MetroFramework.MetroColorStyle.Black;
             this.cboxCategory.TabIndex = 3;
             this.cboxCategory.UseSelectable = true;
             this.cboxCategory.SelectedIndexChanged += new System.EventHandler(this.cboxCategory_SelectedIndexChanged);

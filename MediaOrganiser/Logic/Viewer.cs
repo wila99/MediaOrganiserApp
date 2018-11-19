@@ -6,7 +6,7 @@ namespace MediaOrganiser.Logic
 {
     public class Viewer
     {
-       
+
         public static ListViewItem[] DisplayDirectory(string path)
         {
             var directoryItems = new List<ListViewItem>();
@@ -33,10 +33,7 @@ namespace MediaOrganiser.Logic
             {
                 return directoryItems.ToArray();
             }
-           
+
         }
-        //public static void FilterItems()
-        //{
-        //}
     }
 }

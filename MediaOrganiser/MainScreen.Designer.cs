@@ -126,6 +126,7 @@
             this.lstMediaViewer.Size = new System.Drawing.Size(542, 328);
             this.lstMediaViewer.TabIndex = 7;
             this.lstMediaViewer.UseCompatibleStateImageBehavior = false;
+            this.lstMediaViewer.View = System.Windows.Forms.View.SmallIcon;
             this.lstMediaViewer.Click += new System.EventHandler(this.lstMediaViewer_Click);
             // 
             // btnRefreshDirectory

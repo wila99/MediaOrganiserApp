@@ -20,7 +20,6 @@ namespace MediaOrganiser.Logic
 
         public void SaveMediaData()
         {
-            // This part is creation of RootNode, however you want
             root = XElement.Load(@"Data\Data.xml");
             XElement rootElement = new XElement("FileStore");
 
@@ -54,15 +53,3 @@ namespace MediaOrganiser.Logic
     }
 }
 
-//var query = from xml in root.Descendants("FilePath" + FileName)
-//            where (string)xml.Element("FilePath")
-//                                         == filePath
-//            select new
-//            {
-//                filePath = (string)xml.Element("FilePath"),
-//                fileName = (string)xml.Element("FileName"),
-//                fileType = (string)xml.Element("FileType"),
-//                category = (string)xml.Element("Category")
-//            };
-//            foreach (var item in query)
-//                list.Add(item.ToString());
