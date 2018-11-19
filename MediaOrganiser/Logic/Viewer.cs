@@ -12,13 +12,16 @@ namespace MediaOrganiser.Logic
             var directoryItems = new List<ListViewItem>();
             if (!(string.IsNullOrEmpty(path)))
             {
-                foreach (var file in Directory.GetFiles(@path))
+                if (!(Directory.GetFiles(@path).Length == 0))
                 {
-                    //Gets file name without returning the full path.
-                    string fileName = Path.GetFileName(file);
-                    ListViewItem fileItem = new ListViewItem(fileName);
-                    directoryItems.Add(fileItem);
-                }
+                    foreach (var file in Directory.GetFiles(@path))
+                    {
+                        //Gets file name without returning the full path.
+                        string fileName = Path.GetFileName(file);
+                        ListViewItem fileItem = new ListViewItem(fileName);
+                        directoryItems.Add(fileItem);
+                    }
+                }                
                 foreach (string folder in Directory.GetDirectories(@path))
                 {
                     //Gets folder name without returning the full path.
