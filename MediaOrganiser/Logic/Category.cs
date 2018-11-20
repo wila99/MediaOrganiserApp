@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace MediaOrganiser.Logic
 {
-    class Category
+    public class Category
     {
         public List<string> categories = new List<string>();
         XElement root;
